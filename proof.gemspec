@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.homepage      = "https://helloluxi.github.io/cheat-sheet
   spec.license       = "MIT"
 
-  spec.files         = `git ls-files -z`.split("\x0").select { |f| f.match(%r{^(static|_layouts|_includes|_sass|_posts|index|search|about|manual|atom|Gemfile|LICENSE|README)}i) }
+  spec.files         = `git ls-files -z`.split("\x0").select { |f| f.match(%r{^(static|_layouts|_includes|_sass|_posts|index|about|atom|Gemfile|LICENSE|README)}i) }
 
   spec.add_runtime_dependency "jekyll", "~> 4.1.0"
 
