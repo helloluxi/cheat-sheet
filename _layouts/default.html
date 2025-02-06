@@ -23,6 +23,12 @@
         </div>
       </div>
 
+      <!-- Floating Table of Contents -->
+      <nav id="toc">
+        <h4>Table of Contents</h4>
+        <ul id="toc-list"></ul>
+      </nav>
+
       <div class="container content" id="main">
 <!-- ########################################################################################### -->
 {{ content }}
@@ -63,7 +69,59 @@
         checkbox.checked = false;
       }, false);
     })(document);
+    // Generate Table of Contents
+    document.addEventListener("DOMContentLoaded", function() {
+      var tocList = document.getElementById("toc-list");
+      var headers = document.querySelectorAll(".content h2"); // Find all H2 elements
+
+      headers.forEach(function(header, index) {
+        var id = "section-" + index;
+        header.id = id; // Set unique ID to each H2
+        var listItem = document.createElement("li");
+        var link = document.createElement("a");
+        link.href = "#" + id;
+        link.textContent = header.textContent;
+        listItem.appendChild(link);
+        tocList.appendChild(listItem);
+      });
+    });
     </script>
 
+    <style>
+      /* Floating TOC Styling */
+      #toc {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+        max-width: 200px;
+        font-size: 14px;
+        z-index: 1000;
+      }
+      #toc h4 {
+        margin: 0;
+        font-size: 16px;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 5px;
+      }
+      #toc ul {
+        list-style: none;
+        padding: 0;
+      }
+      #toc ul li {
+        margin: 5px 0;
+      }
+      #toc ul li a {
+        text-decoration: none;
+        color: #0077cc;
+      }
+      #toc ul li a:hover {
+        text-decoration: underline;
+      }
+    </style>
   </body>
 </html>

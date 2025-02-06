@@ -1,12 +1,7 @@
 ---
 layout: default
-title: Test file
+title: Cheat Sheet
 ---
-
-$$
-\newcommand{\ip}[2]{\langle #1 | #2 \rangle}
-\newcommand{\dyad}[2]{\ket{#1}\bra{#2}}
-$$
 
 ## Test Bra and Ket
 
@@ -20,7 +15,7 @@ $$
 
 ## Matrices
 
-Inline: $\begin{bmatrix} a & b \\ c & d \end{bmatrix}$
+Inline: $\displaystyle\begin{bmatrix} a & b \\ c & d \end{bmatrix}$
 
 Block:
 
