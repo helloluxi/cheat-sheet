@@ -3,7 +3,7 @@ layout: page
 title: Manual
 editor: admin
 toc: [background, write, review, publish]
-repository: https://github.com/mahrud/proof
+repository: https://github.com/helloluxi/cheat-sheet
 ---
 
 This manual is based on a documentation written by [Alex Gil](http://laic.columbia.edu/author/2728293031/) with beginners in mind, but has the necessary information for more seasoned conspirators. We will walk through writing a sample blog post titled *The Twisted Cubic*.
