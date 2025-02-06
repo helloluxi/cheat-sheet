@@ -15,7 +15,7 @@ $$
 
 ## Matrices
 
-Inline: $\displaystyle\begin{bmatrix} a & b \\ c & d \end{bmatrix}$
+Inline: $\displaystyle{\begin{bmatrix} a & b \\ c & d \end{bmatrix}}$
 
 Block:
 

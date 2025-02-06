@@ -1,0 +1,73 @@
+@import 'colors';
+
+// Floating TOC Styling
+#toc {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  max-width: 200px;
+  font-size: 14px;
+  z-index: 1000;
+
+  h4 {
+    margin: 0;
+    font-size: 16px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      margin: 5px 0;
+
+      a {
+        text-decoration: none;
+        color: #0077cc;
+        transition: color 0.3s ease;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+// Themed TOC Colors
+@each $theme, $color in (
+  red: #ac4142,
+  orange: #d28445,
+  yellow: #f4bf75,
+  green: #90a959,
+  cyan: #75b5aa,
+  blue: #6a9fb5,
+  magenta: #aa759f,
+  brown: #8f5536
+) {
+  .theme-base-#{$theme} {
+    #toc {
+      border-color: $color;
+      
+      h4 {
+        border-bottom-color: lighten($color, 20%);
+        color: $color;
+      }
+
+      ul li a {
+        color: $color;
+
+        &:hover {
+          color: darken($color, 10%);
+        }
+      }
+    }
+  }
+}
