@@ -3,9 +3,9 @@ layout: default
 title: Cheat Sheet
 ---
 
-## .Conventions
+Conventions:
 
-- $\a = \sqhf{\q + i\p}$, $\q = \sqhf{\a + \a^\dagger}$, $\p = \frac{\a - \a^\dagger}{\sqrt{2}i}$
+$\a = \sqhf{\q + i\p}$, $\q = \sqhf{\a + \a^\dagger}$, $\p = \frac{\a - \a^\dagger}{\sqrt{2}i}$
 
 
 

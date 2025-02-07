@@ -2,17 +2,7 @@
 <html lang="en-us">
 {% include head.html %}
   <body class="theme-base-{{ site.color-scheme }}">
-    {% comment %} This if statement decides which sidebar to use {% endcomment %}
-    {%- if page.toc %}
-{% include sidebar-toc.html %}
-    {% else %}
-{% include sidebar.html %}
-    {% endif -%}
 
-    <!--
-      Wrap is the content to shift when toggling the sidebar.
-      We wrap the content to avoid any CSS collisions with our real content.
-    -->
     <div class="wrap">
       <div class="masthead">
         <div class="container">
@@ -36,47 +26,25 @@
       </div>
     </div>
 
-    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
-
     <script>
     // Highlight search Query
     var url = window.location.href;
     if (url.lastIndexOf("?q=") > 0) {
-      // get the index of the parameter, add three (to account for length)
       var stringloc = url.lastIndexOf("?q=") + 3;
-      // get the substring (query) and decode
       var searchquery = decodeURIComponent(url.substr(stringloc));
-      // regex matches at beginning of line, end of line or word boundary, useful for poetry
       var regex = new RegExp("(?:^|\\b)(" + searchquery + ")(?:$|\\b)", "gim");
-      // get, add mark and then set content
       var content = document.getElementById("main").innerHTML;
       document.getElementById("main").innerHTML = content.replace(regex, "<mark>$1</mark>");
     }
 
-    // Toggle sidebar
-    (function(document) {
-      var toggle = document.querySelector('.sidebar-toggle');
-      var sidebar = document.querySelector('#sidebar');
-      var checkbox = document.querySelector('#sidebar-checkbox');
-
-      document.addEventListener('click', function(e) {
-        var target = e.target;
-
-        if(!checkbox.checked ||
-           !sidebar.contains(target) ||
-           (target === checkbox || target === toggle)) return;
-
-        checkbox.checked = false;
-      }, false);
-    })(document);
     // Generate Table of Contents
     document.addEventListener("DOMContentLoaded", function() {
       var tocList = document.getElementById("toc-list");
-      var headers = document.querySelectorAll(".content h2"); // Find all H2 elements
+      var headers = document.querySelectorAll(".content h2");
 
       headers.forEach(function(header, index) {
         var id = "section-" + index;
-        header.id = id; // Set unique ID to each H2
+        header.id = id;
         var listItem = document.createElement("li");
         var link = document.createElement("a");
         link.href = "#" + id;
@@ -86,42 +54,5 @@
       });
     });
     </script>
-
-    <style>
-      /* Floating TOC Styling */
-      #toc {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        background: rgba(255, 255, 255, 0.9);
-        padding: 10px;
-        border-radius: 5px;
-        border: 1px solid #ccc;
-        box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
-        max-width: 200px;
-        font-size: 14px;
-        z-index: 1000;
-      }
-      #toc h4 {
-        margin: 0;
-        font-size: 16px;
-        border-bottom: 1px solid #ddd;
-        padding-bottom: 5px;
-      }
-      #toc ul {
-        list-style: none;
-        padding: 0;
-      }
-      #toc ul li {
-        margin: 5px 0;
-      }
-      #toc ul li a {
-        text-decoration: none;
-        color: #0077cc;
-      }
-      #toc ul li a:hover {
-        text-decoration: underline;
-      }
-    </style>
   </body>
 </html>
