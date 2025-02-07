@@ -5,7 +5,7 @@ title: Cheat Sheet
 
 Conventions:
 
-$\a = \sqhf{\q + i\p}$, $\q = \sqhf{\a + \a^\dagger}$, $\p = \frac{\a - \a^\dagger}{\sqrt{2}i}$
+$\a = \sqhf{\q + i\p}$, $\q = \sqhf{\a + \a^\dagger}$, $\p = \frac{\a - \a^\dagger}{\sqrt{2}i}$, $\hbar = 1$.
 
 
 
@@ -22,7 +22,7 @@ Corollaries:
 
 ## Beam Splitter
 
-- $BS(\theta, \varphi) = e^{-i\hf{\theta} (e^{i\varphi\a^\dagger\b+e^{-i\varphi\a\b^\dagger}})}$
+- $BS(\theta, \varphi) = e^{-i\hf{\theta} (e^{i\varphi}\a^\dagger\b+e^{-i\varphi}\a\b^\dagger)}$
 - $BS(\theta, \varphi)^\dagger \a BS(\theta, \varphi) = \cos\hf{\theta} \a - i \sin\hf{\theta} e^{i\varphi} \b$
 - $BS(\theta, \varphi)^\dagger \b BS(\theta, \varphi) = \cos\hf{\theta} \b - i \sin\hf{\theta} e^{-i\varphi} \a$
 - $BS(\theta, \varphi) \keta{\alpha} \keta{\beta} = \keta{\alpha\cos\hf{\theta} + i\beta\sin\hf{\theta} e^{i\varphi}} \keta{\beta\cos\hf{\theta} + i\alpha\sin\hf{\theta} e^{-i\varphi}}$
@@ -40,7 +40,7 @@ Corollaries:
 
 ## Displacement Operator
 
-- $\D{\alpha} = e^{\alpha \a^\dagger - \alpha^* \a} = e^{i\sqt(\Im\alpha\q - \Re\alpha\p)}$
+- $\D{\alpha} = e^{\alpha \a^\dagger - \alpha^* \a} = e^{i\sqt(\q\Im\alpha - \p\Re\alpha)}$
 - $\D{\alpha}^\dagger \a \D{\alpha} = \a + \alpha$
 - $\D{\alpha} \D{\beta} = e^{\hf{1}(\alpha \beta^* - \alpha^* \beta)} \D{\alpha + \beta} = e^{\alpha \beta^* - \alpha^* \beta} \D{\beta} \D{\alpha}$
 - $\D{\alpha}: \psi(x) \mapsto \psi(x - \sqt\Re\alpha) e^{ix\sqt\Im\alpha-i\Re\alpha\Im\alpha}$
@@ -57,6 +57,7 @@ Corollaries:
 ## Phase space
 
 - Inverse map: $f(q,p) = 2\int_{-\infty}^\infty \bra{q+y}\Phi[f]\ket{q-y} e^{-2ipy} d y$
+- Moyal product: $f \star g = f e^{\frac{i}{2}(\overleftarrow{\partial}_q \overrightarrow{\partial}_p - \overleftarrow{\partial}_p \overrightarrow{\partial}_q)} g$
 
 
 ## Rotation Operator
