@@ -8,10 +8,9 @@ Conventions:
 $\a = \sqhf{\q + i\p}$, $\q = \sqhf{\a + \a^\dagger}$, $\p = \frac{\a - \a^\dagger}{\sqrt{2}i}$, $\hbar = 1$.
 
 
+## BCH Formula
 
-## Baker–Campbell–Hausdorff (BCH) formula
-
-Let $e^Xe^Y = e^Z$, then
+Baker–Campbell–Hausdorff Formula: $e^Xe^Y = e^Z$, where
 
 $$
 Z = X + Y + \frac{1}{2}[X,Y] + \frac{1}{12}[X,[X,Y]] - \frac{1}{12}[Y,[X,Y]] + \cdots
@@ -19,6 +18,7 @@ $$
 
 Corollaries:
 - $e^{i\kappa\q} e^{i\lambda\p} = e^{-i\kappa\lambda/2} e^{i(\kappa\q + \lambda\p)} = e^{-i\kappa\lambda} e^{i\lambda\p} e^{i\kappa\q}$
+
 
 ## Beam Splitter
 
@@ -28,7 +28,7 @@ Corollaries:
 - $BS(\theta, \varphi) \keta{\alpha} \keta{\beta} = \keta{\alpha\cos\hf{\theta} + i\beta\sin\hf{\theta} e^{i\varphi}} \keta{\beta\cos\hf{\theta} + i\alpha\sin\hf{\theta} e^{-i\varphi}}$
 
 
-## Coherent states
+## Coherent State
 
 - Definition: $\keta{\alpha} = e^{-\hf{\abs{\alpha}^2}} \sum_{n=0}^\infty \frac{\alpha^n}{\sqrt{n!}} \ket{n}_F$
 - Inner product: $\ip{\beta}{\alpha} = e^{-\hf{1}(\abs{\alpha}^2 + \abs{\beta}^2 - 2\beta^* \alpha)} = e^{-\hf{1}(\abs{\alpha - \beta}^2)+i\Im(\beta\alpha^*)}$
@@ -46,7 +46,7 @@ Corollaries:
 - $\D{\alpha}: \psi(x) \mapsto \psi(x - \sqt\Re\alpha) e^{ix\sqt\Im\alpha-i\Re\alpha\Im\alpha}$
 
 
-## Fock states
+## Fock State
 
 - Definition: $\ket{n}_F = \frac{1}{\sqrt{n!}} \a^{\dagger n} \ket{0}_F$
 - Wave function: $\psi_n(x) = \frac{1}{\sqrt{2^n n!}} \pi^{-1/4} e^{-\hf{x^2}} H_n(x)$, where $H_n(x)$ is the Hermite polynomial
@@ -54,7 +54,7 @@ Corollaries:
 - Husimi Q function: $Q_n(\alpha) = \frac{1}{\pi} e^{-\abs{\alpha}^2} \frac{\abs{\alpha}^{2n}}{n!}$
 
 
-## Phase space
+## Phase Space
 
 - Inverse map: $f(q,p) = 2\int_{-\infty}^\infty \bra{q+y}\Phi[f]\ket{q-y} e^{-2ipy} d y$
 - Moyal product: $f \star g = f e^{\frac{i}{2}(\overleftarrow{\partial}_q \overrightarrow{\partial}_p - \overleftarrow{\partial}_p \overrightarrow{\partial}_q)} g$
@@ -67,6 +67,11 @@ Corollaries:
 - $\R{\theta}^\dagger \a \R{\theta} = e^{-i\theta}\a$
 - $\R{\theta}^\dagger \q \R{\theta} = \cos\theta \q + \sin\theta \p$
 - $\R{\theta}^\dagger \p \R{\theta} = \cos\theta \p - \sin\theta \q$
+
+
+## Quantum Signal Processing
+
+- Jacobi-Anger expansion: $e^{-itx} = J_0(t) + 2\sum_{k=1}^\infty (-i)^k J_k(t) T_k(x)$, where $J_k(t)$ is the Bessel function of the first kind and $T_k(x)$ is the Chebyshev polynomial of the first kind
 
 
 ## Squeezing Operator
