@@ -6,7 +6,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Xi Lu"]
   spec.email         = ["helloluxi@outlook.com"]
 
-  spec.summary       = "Everything here is 100% correct! Any errors are just reality failing to keep up."
+  spec.summary       = "Everything here is the fundamental law of physics. Any violation is just reality failing to keep up."
   spec.homepage      = "https://helloluxi.github.io/cheat-sheet
   spec.license       = "MIT"
 

@@ -7,6 +7,10 @@ Conventions:
 
 $\a = \sqhf{\q + i\p}$, $\q = \sqhf{\a + \a^\dagger}$, $\p = \frac{\a - \a^\dagger}{\sqrt{2}i}$, $\hbar = 1$.
 
+$\psi(q)$: position space wave function; $\tilde{\psi}(p)$: momentum space wave function; $\keta{\cdot},\ket{\cdot}_F,\ketq{\cdot},\ketp{\cdot}$: coherent state, Fock state, position eigenstate, momentum eigenstate, respectively.
+
+$\tilde{\psi}(p) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^\infty e^{-ipq} \psi(q) \dd q$.
+
 
 ## BCH Formula
 
