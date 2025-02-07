@@ -5,7 +5,7 @@ url:                 https://helloluxi.github.io/cheat-sheet
 gtag:                UA-131373039-2 # Google Analytics Tag
 
 # Color scheme. Options: red, orange, magenta, cyan, blue, brown
-color-scheme:
+color-scheme: dark
 
 # Permalinks
 permalink: pretty

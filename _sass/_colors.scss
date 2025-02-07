@@ -108,3 +108,28 @@
 .theme-base-brown .related-posts li a:hover {
   color: #8f5536;
 }
+
+/* Dark Theme */
+.theme-base-dark {
+  background-color: #121212;  // Dark background for the page
+  color: #ffffff;  // Light text color
+  
+  .sidebar,
+  .sidebar-toggle:active,
+  #sidebar-checkbox:checked ~ .sidebar-toggle {
+    background-color: #1a1a1a; // Dark sidebar
+  }
+
+  .container {
+    background-color: #181818; // Darker content background
+  }
+
+  a {
+    color: #1e90ff; // Blue links for contrast
+  }
+
+  .masthead {
+    background-color: #1a1a1a;
+    color: #ffffff;
+  }
+}
