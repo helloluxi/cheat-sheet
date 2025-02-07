@@ -111,7 +111,7 @@
 
 /* Dark Theme */
 .theme-base-dark {
-  background-color: #121212;  // Dark background for the page
+  background-color: #181818;  // Dark background for the page
   color: #ffffff;  // Light text color
   
   .sidebar,
@@ -131,5 +131,15 @@
   .masthead {
     background-color: #1a1a1a;
     color: #ffffff;
+    small {
+      color: #bbbbbb; // Adjust this to your preferred tagline color
+    }
+  }
+
+  /* TOC Styling for Dark Theme */
+  #toc {
+    background: #1e1e1e;
+    border-color: #333333;
+    color: #f0f0f0;
   }
 }
