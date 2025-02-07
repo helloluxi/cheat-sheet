@@ -136,10 +136,27 @@
     }
   }
 
-  /* TOC Styling for Dark Theme */
   #toc {
-    background: #1e1e1e;
-    border-color: #333333;
-    color: #f0f0f0;
+    background: #1e1e1e; // Dark background for TOC
+    border-color: #333333; // Darker border
+    color: #f0f0f0; // Light text for contrast
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); // Stronger shadow for depth
+
+    h4 {
+      border-bottom: 1px solid #444444; // Darker separator
+      color: #ffffff; // Light header text
+    }
+
+    ul {
+      li {
+        a {
+          color: #1e90ff; // Blue links
+          
+          &:hover {
+            color: #87cefa; // Lighter blue on hover
+          }
+        }
+      }
+    }
   }
 }
