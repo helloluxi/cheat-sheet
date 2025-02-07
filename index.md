@@ -16,6 +16,18 @@ $$
 Z = X + Y + \frac{1}{2}[X,Y] + \frac{1}{12}[X,[X,Y]] - \frac{1}{12}[Y,[X,Y]] + \cdots
 $$
 
+Zassenhaus Formula:
+
+$$
+e^{X+Y} = e^X e^Y e^{-\frac{1}{2}[X,Y]} e^{\frac{1}{6}(2[Y,[X,Y]]+[X,[X,Y]])} \cdots
+$$
+
+Campbell Identity:
+
+$$
+e^X Y e^{-X} = Y + [X,Y] + \frac{1}{2!}[X,[X,Y]] + \frac{1}{3!}[X,[X,[X,Y]]] + \cdots
+$$
+
 Corollaries:
 - $e^{i\kappa\q} e^{i\lambda\p} = e^{-i\kappa\lambda/2} e^{i(\kappa\q + \lambda\p)} = e^{-i\kappa\lambda} e^{i\lambda\p} e^{i\kappa\q}$
 
@@ -31,7 +43,7 @@ Corollaries:
 ## Coherent State
 
 - Definition: $\keta{\alpha} = e^{-\hf{\abs{\alpha}^2}} \sum_{n=0}^\infty \frac{\alpha^n}{\sqrt{n!}} \ket{n}_F$
-- Inner product: $\ip{\beta}{\alpha} = e^{-\hf{1}(\abs{\alpha}^2 + \abs{\beta}^2 - 2\beta^* \alpha)} = e^{-\hf{1}(\abs{\alpha - \beta}^2)+i\Im(\beta\alpha^*)}$
+- Inner product: $\ip{\beta}{\alpha} = e^{-\hf{1}(\abs{\alpha}^2 + \abs{\beta}^2) + \beta^* \alpha} = e^{-\hf{1}(\abs{\alpha - \beta}^2)+i(\Re\beta\Im\alpha-\Re\alpha\Im\beta)}$
 - Wave function: $\psi_\alpha(x) = \pi^{-1/4} e^{-\hf{1}(x - \sqt\Re\alpha)^2 + ix\sqt\Im\alpha}$
 - Wigner function: $W_\beta(\alpha) = \frac{2}{\pi} e^{-2\abs{\alpha - \beta}^2}$
 - Husimi Q function: $Q_\beta(\alpha) = \frac{1}{\pi} e^{-\abs{\alpha - \beta}^2}$
@@ -42,7 +54,7 @@ Corollaries:
 
 - $\D{\alpha} = e^{\alpha \a^\dagger - \alpha^* \a} = e^{i\sqt(\q\Im\alpha - \p\Re\alpha)}$
 - $\D{\alpha}^\dagger \a \D{\alpha} = \a + \alpha$
-- $\D{\alpha} \D{\beta} = e^{\hf{1}(\alpha \beta^* - \alpha^* \beta)} \D{\alpha + \beta} = e^{\alpha \beta^* - \alpha^* \beta} \D{\beta} \D{\alpha}$
+- $\D{\alpha} \D{\beta} = e^{i(\Re\beta\Im\alpha-\Re\alpha\Im\beta)} \D{\alpha + \beta} = e^{2i(\Re\beta\Im\alpha-\Re\alpha\Im\beta)} \D{\beta} \D{\alpha}$
 - $\D{\alpha}: \psi(x) \mapsto \psi(x - \sqt\Re\alpha) e^{ix\sqt\Im\alpha-i\Re\alpha\Im\alpha}$
 
 
