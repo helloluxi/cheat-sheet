@@ -1,6 +1,6 @@
 @import 'colors';
 
-// Floating TOC Styling
+// Floating TOC Styling (Default for Larger Screens)
 #toc {
   position: fixed;
   top: 20px;
@@ -41,6 +41,36 @@
   }
 }
 
+// Responsive Styling: Inline TOC on Mobile
+@media (max-width: 1200px) {
+  #toc {
+    position: relative;
+    top: auto;
+    right: auto;
+    background: transparent;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+    max-width: 100%;
+    margin-bottom: 20px; // Adds spacing below TOC
+
+    h4 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 5px;
+    }
+
+    ul {
+      padding-left: 20px; // Indent list slightly for better readability
+
+      li {
+        margin: 8px 0;
+      }
+    }
+  }
+}
+
 // Themed TOC Colors
 @each $theme, $color in (
   red: #ac4142,
@@ -55,7 +85,7 @@
   .theme-base-#{$theme} {
     #toc {
       border-color: $color;
-      
+
       h4 {
         border-bottom-color: lighten($color, 20%);
         color: $color;
