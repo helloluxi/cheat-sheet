@@ -68,9 +68,12 @@ h1.text-title {
 }
 
 h2 {
-  margin-top: 1rem;
+  margin-top: 2rem;
   font-size: 1.2rem;
+  color: rgb(68, 68, 255);
+  border-bottom: 2px solid lightgray;
 }
+
 
 h3, h4, h5 {
   font-size: 1rem;

@@ -12,6 +12,7 @@ title: Cheat Sheet
 ## Baker–Campbell–Hausdorff (BCH) formula
 
 Let $e^Xe^Y = e^Z$, then
+
 $$
 Z = X + Y + \frac{1}{2}[X,Y] + \frac{1}{12}[X,[X,Y]] - \frac{1}{12}[Y,[X,Y]] + \cdots
 $$
@@ -21,7 +22,7 @@ Corollaries:
 
 ## Beam Splitter
 
-- $BS(\theta, \varphi) = e^{-i\hf{\theta}[e^{i\varphi\a^\dagger\b+e^{-i\varphi\a\b^\dagger}}]}$
+- $BS(\theta, \varphi) = e^{-i\hf{\theta} (e^{i\varphi\a^\dagger\b+e^{-i\varphi\a\b^\dagger}})}$
 - $BS(\theta, \varphi)^\dagger \a BS(\theta, \varphi) = \cos\hf{\theta} \a - i \sin\hf{\theta} e^{i\varphi} \b$
 - $BS(\theta, \varphi)^\dagger \b BS(\theta, \varphi) = \cos\hf{\theta} \b - i \sin\hf{\theta} e^{-i\varphi} \a$
 - $BS(\theta, \varphi) \keta{\alpha} \keta{\beta} = \keta{\alpha\cos\hf{\theta} + i\beta\sin\hf{\theta} e^{i\varphi}} \keta{\beta\cos\hf{\theta} + i\alpha\sin\hf{\theta} e^{-i\varphi}}$
