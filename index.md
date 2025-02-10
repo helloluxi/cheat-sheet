@@ -48,7 +48,7 @@ Corollaries:
 
 - Definition: $\keta{\alpha} = e^{-\hf{\abs{\alpha}^2}} \sum_{n=0}^\infty \frac{\alpha^n}{\sqrt{n!}} \ket{n}_F$
 - Inner product: $\ip{\beta}{\alpha} = e^{-\hf{1}(\abs{\alpha}^2 + \abs{\beta}^2) + \beta^* \alpha} = e^{-\hf{1}(\abs{\alpha - \beta}^2)+i(\Re\beta\Im\alpha-\Re\alpha\Im\beta)}$
-- Wave function: $\psi_\alpha(x) = \pi^{-1/4} e^{-\hf{1}(x - \sqt\Re\alpha)^2 + ix\sqt\Im\alpha}$
+- Wave function: $\psi_\alpha(x) = \pi^{-1/4} e^{-\hf{1}(x - \sqt\Re\alpha)^2 + ix\sqt\Im\alpha}$, $\tilde{\psi}(p) = \pi^{-1/4} e^{-\hf{1}(p - \sqt\Im\alpha)^2 - ip\sqt\Re\alpha}$
 - Wigner function: $W_\beta(\alpha) = \frac{2}{\pi} e^{-2\abs{\alpha - \beta}^2}$
 - Husimi Q function: $Q_\beta(\alpha) = \frac{1}{\pi} e^{-\abs{\alpha - \beta}^2}$
 
@@ -57,6 +57,7 @@ Corollaries:
 ## Displacement Operator
 
 - $\D{\alpha} = e^{\alpha \a^\dagger - \alpha^* \a} = e^{i\sqt(\q\Im\alpha - \p\Re\alpha)}$
+- When $p_0,q_0\in\mathbb{R}$, $\D{q_0} = e^{-i\sqt q_0\p}$, $\D{i p_0} = e^{i\sqt p_0 \q}$
 - $\D{\alpha}^\dagger \a \D{\alpha} = \a + \alpha$
 - $\D{\alpha} \D{\beta} = e^{i(\Re\beta\Im\alpha-\Re\alpha\Im\beta)} \D{\alpha + \beta} = e^{2i(\Re\beta\Im\alpha-\Re\alpha\Im\beta)} \D{\beta} \D{\alpha}$
 - $\D{\alpha}: \psi(x) \mapsto \psi(x - \sqt\Re\alpha) e^{ix\sqt\Im\alpha-i\Re\alpha\Im\alpha}$
@@ -64,9 +65,8 @@ Corollaries:
 
 ## Fock State
 
-- Definition: $\ket{n}_F = \frac{1}{\sqrt{n!}} \a^{\dagger n} \ket{0}_F$
 - Wave function: $\psi_n(x) = \frac{1}{\sqrt{2^n n!}} \pi^{-1/4} e^{-\hf{x^2}} H_n(x)$, where $H_n(x)$ is the Hermite polynomial
-- Wigner function: $W_n(q,p) = \frac{(-1)^n}{\pi} e^{-q^2 - p^2} L_n(2(q^2 + p^2))$, where $L_n(x)$ is the Laguerre polynomial
+- Wigner function: $W_n(q,p) = \frac{(-1)^n}{\pi} e^{-(q^2+p^2)} L_n(2(q^2 + p^2))$, where $L_n(x)$ is the Laguerre polynomial
 - Husimi Q function: $Q_n(\alpha) = \frac{1}{\pi} e^{-\abs{\alpha}^2} \frac{\abs{\alpha}^{2n}}{n!}$
 
 
@@ -93,8 +93,9 @@ Corollaries:
 ## Squeezing Operator
 
 - $\S{\xi} = e^{\frac{1}{2}(\xi^* \a^2 - \xi \a^{\dagger 2})}$
-- When $\xi=r\in\mathbb{R}$:
-    - $\S{r}^\dagger \q \S{r} = e^{r}\q$
-    - $\S{r}^\dagger \p \S{r} = e^{-r}\p$
-    - $\S{r}: \psi(x) \mapsto e^{-r/2} \psi(e^{-r}x)$
-    - $\S{a} \D{b} = \D{e^{a}b} \S{a}$
+- When $\xi=a\in\mathbb{R},b\in\mathbb{R}$,
+    - $\S{a} = e^{i(\q\p+\p\q)}$
+    - $\S{a}^\dagger \q \S{a} = e^{-a}\q$
+    - $\S{a}^\dagger \p \S{a} = e^{a}\p$
+    - $\S{a}: \psi(x) \mapsto e^{a/2} \psi(e^{a}x)$
+    - $\S{a} \D{b} = \D{e^{-a}b} \S{a}$
