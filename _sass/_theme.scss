@@ -608,3 +608,21 @@ a.sidebar-nav-item:focus {
 .layout-reverse.sidebar-overlay #sidebar-checkbox:checked ~ .sidebar {
   box-shadow: -.25rem 0 .5rem rgba(0,0,0,.1);
 }
+
+.footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #121212; // Dark background
+  color: #bbb; // Soft gray text for readability
+  font-size: 0.9rem;
+
+  a {
+    color: #4fa3d1; // Subtle blue for links
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+
+    &:hover {
+      color: #76c7ff; // Lighter blue on hover
+    }
+  }
+}
