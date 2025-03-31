@@ -28,9 +28,6 @@ $$
 e^X Y e^{-X} = Y + [X,Y] + \frac{1}{2!}[X,[X,Y]] + \frac{1}{3!}[X,[X,[X,Y]]] + \cdots
 $$
 
-Corollaries:
-- $e^{i\kappa\q} e^{i\lambda\p} = e^{-i\kappa\lambda/2} e^{i(\kappa\q + \lambda\p)} = e^{-i\kappa\lambda} e^{i\lambda\p} e^{i\kappa\q}$
-
 
 ## Beam Splitter
 
@@ -38,6 +35,11 @@ Corollaries:
 - $BS(\theta, \varphi)^\dagger \a BS(\theta, \varphi) = \cos\hf{\theta} \a - i \sin\hf{\theta} e^{i\varphi} \b$
 - $BS(\theta, \varphi)^\dagger \b BS(\theta, \varphi) = \cos\hf{\theta} \b - i \sin\hf{\theta} e^{-i\varphi} \a$
 - $BS(\theta, \varphi) \keta{\alpha} \keta{\beta} = \keta{\alpha\cos\hf{\theta} + i\beta\sin\hf{\theta} e^{i\varphi}} \keta{\beta\cos\hf{\theta} + i\alpha\sin\hf{\theta} e^{-i\varphi}}$
+
+
+## Commutators
+
+- $[\q^m, \p^n] = i \sum_{k=1}^{\min(m,n)} k! \binom{m}{k} \binom{n}{k} \q^{m-k} \p^{n-k}$
 
 
 ## Coherent State
@@ -57,6 +59,7 @@ Corollaries:
 - $\D{\alpha}^\dagger \a \D{\alpha} = \a + \alpha$
 - $\D{\alpha} \D{\beta} = e^{i(\Re\beta\Im\alpha-\Re\alpha\Im\beta)} \D{\alpha + \beta} = e^{2i(\Re\beta\Im\alpha-\Re\alpha\Im\beta)} \D{\beta} \D{\alpha}$
 - $\D{\alpha}: \psi(x) \mapsto \psi(x - \sqt\Re\alpha) e^{ix\sqt\Im\alpha-i\Re\alpha\Im\alpha}$
+- $e^{i\kappa\q} e^{i\lambda\p} = e^{-i\kappa\lambda/2} e^{i(\kappa\q + \lambda\p)} = e^{-i\kappa\lambda} e^{i\lambda\p} e^{i\kappa\q}$
 
 
 ## Fock State

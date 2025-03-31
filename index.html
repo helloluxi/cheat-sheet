@@ -1,18 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Basic meta elements -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cheat Sheet</title>
-
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
-
-    <!-- KaTeX -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
-    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js" integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/auto-render.min.js"></script>
     <script>
         var macros = {
             "\\ket": "\\lvert #1 \\rangle",
@@ -69,11 +64,9 @@
             });
         });
     </script>
-    
     <style>.katex { font-size: 1.15em; }</style>
-    <link href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/copy-tex.css" rel="stylesheet" type="text/css">
-    <script src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/copy-tex.min.js" integrity="sha384-XhWAe6BtVcvEdS3FFKT7Mcft4HJjPqMQvi5V4YhzH9Qxw497jC13TupOEvjoIPy7" crossorigin="anonymous"></script>
-
+    <link href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/copy-tex.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/copy-tex.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <style>
         .markdown-content {
@@ -102,7 +95,6 @@
           <p>&copy; 2025 Xi Lu. Released under the MIT license. View on <a href="https://github.com/helloluxi/cheat-sheet">GitHub</a></p>
         </div>
     </footer>
-
     <script>
         fetch('main.md')
             .then(response => response.text())
@@ -110,14 +102,13 @@
                 document.getElementById('content').innerHTML = marked.parse(markdown);
                 renderMathInElement(document.body, { delimiters: delimiters, macros: macros });
                 
-                // Generate TOC
                 const headings = document.querySelectorAll('h2');
                 if (headings.length > 0) {
                     const toc = document.getElementById('toc');
                     toc.innerHTML = '<h4>Table of Contents</h4><ul>';
                     headings.forEach((heading, index) => {
                         const id = `heading-${index}`;
-                        heading.id = id; // Add ID to heading for linking
+                        heading.id = id;
                         toc.innerHTML += `<li><a href="#${id}">${heading.textContent}</a></li>`;
                     });
                     toc.innerHTML += '</ul>';
