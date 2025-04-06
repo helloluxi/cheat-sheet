@@ -92,6 +92,12 @@ $$
 ## Squeezing Operator
 
 - $\S{\xi} = e^{\frac{1}{2}(\xi^* \a^2 - \xi \a^{\dagger 2})}$
+- Let $\xi = re^{i2\theta}$
+    - $\S{\xi}^\dagger \q \S{\xi} = (e^{-r} \cos^2\theta + e^{r} \sin^2\theta) \q + \sin\theta\cos\theta (e^{-r} - e^{r}) \p$
+    - $\S{\xi}^\dagger \p \S{\xi} = (e^{-r} \sin^2\theta + e^{r} \cos^2\theta) \p + \sin\theta\cos\theta (e^{-r} - e^{r}) \q$
+    - $\S{\xi}^\dagger \a \S{\xi} = \frac{1}{2} (\cosh(r) \a - \sinh(r) e^{i2\theta} \a^\dagger)$
+    - $\S{\xi}^\dagger \D{\alpha} \S{\xi} = \D{\hf{\cosh(r) \alpha - \sinh(r) e^{i2\theta} \alpha^*}}$
+    - $\S{\xi} \D{\alpha} \S{\xi}^\dagger = \D{\hf{\cosh(r) \alpha + \sinh(r) e^{i2\theta} \alpha^*}}$
 - When $\xi=a\in\mathbb{R},b\in\mathbb{R}$,
     - $\S{a} = e^{i(\q\p+\p\q)}$
     - $\S{a}^\dagger \q \S{a} = e^{-a}\q$
