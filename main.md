@@ -46,7 +46,7 @@ $$
 
 - Definition: $\keta{\alpha} = e^{-\hf{\abs{\alpha}^2}} \sum_{n=0}^\infty \frac{\alpha^n}{\sqrt{n!}} \ket{n}_F$
 - Inner product: $\ip{\beta}{\alpha} = e^{-\hf{1}(\abs{\alpha}^2 + \abs{\beta}^2) + \beta^* \alpha} = e^{-\hf{1}(\abs{\alpha - \beta}^2)+i(\Re\beta\Im\alpha-\Re\alpha\Im\beta)}$
-- Wave function: $\psi_\alpha(x) = \pi^{-1/4} e^{-\hf{1}(x - \sqt\Re\alpha)^2 + ix\sqt\Im\alpha}$, $\tilde{\psi}(p) = \pi^{-1/4} e^{-\hf{1}(p - \sqt\Im\alpha)^2 - ip\sqt\Re\alpha}$
+- Wave function: $\psi_\alpha(x) = \pi^{-1/4} e^{-\hf{1}(x - \sqtw\Re\alpha)^2 + ix\sqtw\Im\alpha}$, $\tilde{\psi}(p) = \pi^{-1/4} e^{-\hf{1}(p - \sqtw\Im\alpha)^2 - ip\sqtw\Re\alpha}$
 - Wigner function: $W_\beta(\alpha) = \frac{2}{\pi} e^{-2\abs{\alpha - \beta}^2}$
 - Husimi Q function: $Q_\beta(\alpha) = \frac{1}{\pi} e^{-\abs{\alpha - \beta}^2}$
 
@@ -54,11 +54,11 @@ $$
 
 ## Displacement Operator
 
-- $\D{\alpha} = e^{\alpha \a^\dagger - \alpha^* \a} = e^{i\sqt(\q\Im\alpha - \p\Re\alpha)}$
-- When $p_0,q_0\in\mathbb{R}$, $\D{q_0} = e^{-i\sqt q_0\p}$, $\D{i p_0} = e^{i\sqt p_0 \q}$
+- $\D{\alpha} = e^{\alpha \a^\dagger - \alpha^* \a} = e^{i\sqtw(\q\Im\alpha - \p\Re\alpha)}$
+- When $p_0,q_0\in\mathbb{R}$, $\D{q_0} = e^{-i\sqtw q_0\p}$, $\D{i p_0} = e^{i\sqtw p_0 \q}$
 - $\D{\alpha}^\dagger \a \D{\alpha} = \a + \alpha$
 - $\D{\alpha} \D{\beta} = e^{i(\Re\beta\Im\alpha-\Re\alpha\Im\beta)} \D{\alpha + \beta} = e^{2i(\Re\beta\Im\alpha-\Re\alpha\Im\beta)} \D{\beta} \D{\alpha}$
-- $\D{\alpha}: \psi(x) \mapsto \psi(x - \sqt\Re\alpha) e^{ix\sqt\Im\alpha-i\Re\alpha\Im\alpha}$
+- $\D{\alpha}: \psi(x) \mapsto \psi(x - \sqtw\Re\alpha) e^{ix\sqtw\Im\alpha-i\Re\alpha\Im\alpha}$
 - $e^{i\kappa\q} e^{i\lambda\p} = e^{-i\kappa\lambda/2} e^{i(\kappa\q + \lambda\p)} = e^{-i\kappa\lambda} e^{i\lambda\p} e^{i\kappa\q}$
 
 
@@ -68,6 +68,31 @@ $$
 - Wigner function: $W_n(q,p) = \frac{(-1)^n}{\pi} e^{-(q^2+p^2)} L_n(2(q^2 + p^2))$, where $L_n(x)$ is the Laguerre polynomial
 - Husimi Q function: $Q_n(\alpha) = \frac{1}{\pi} e^{-\abs{\alpha}^2} \frac{\abs{\alpha}^{2n}}{n!}$
 
+## Gaussian State
+- Moments: $\mu_k = \ev{\r_k}$, $\sigma_{jk} = \hf{1}\ev{\set{\r_j, \r_k}} - \mu_j \mu_k$, where $\r = (q_1,\cdots,q_n,p_1,\ldots,p_n)^T$.
+    - $\bm{\sigma} + \hf{i}\bm{\Omega} \ge \bm{0}$, where $\bm{\Omega}$ is the symplectic form.
+    - Wigner function: $W(q,p) = \frac{1}{(2\pi)^n \sqrt{\det{\bm{\Omega}}}} e^{-\frac{1}{2}(\bm{r} - \bm{\mu})^T \bm{\sigma}^{-1} (\bm{r} - \bm{\mu})}$.
+- Operations: $\bm{\sigma} \mapsto F \bm{\sigma} F^\top$ and $\bm{\mu} \mapsto F \bm{\mu} + bm{d}$, where $F$ is a symplectic matrix.
+    - Displacement: $F = I$, $d = \sqtw(\Re\alpha,\Im\alpha)^\top$.
+    - Rotation: $F = \begin{pmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{pmatrix}$, $d = 0$.
+    - Squeezing:
+    - Sheering:
+    - Beam splitter:
+    - Two-mode sum:
+    - Two-mode squeezing:
+- Measurements:
+    - Homodyne:
+    - Heterodyne:
+    - Any Gaussian:
+
+## Integrals
+- Gaussian ($a>0;b,c\in\mathbb{R}$):
+    - $\int_{-\infty}^\infty e^{-a x^2 + bx + c} \dd x = \sqrt{\frac{\pi}{a}} e^{\frac{b^2}{4a} + c}$.
+
+## Other Gaussian Operators
+- Sheering:
+- Two-mode sum:
+- Two-mode squeezing:
 
 ## Phase Space
 
