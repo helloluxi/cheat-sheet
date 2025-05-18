@@ -24,10 +24,28 @@
     box-sizing: border-box
 }
 
-html,body {
+html, body {
     margin: 0;
     padding: 0;
-    overflow-x: hidden
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    font-family: "Libre Baskerville", serif;
+    position: relative;
+}
+
+#content {
+    flex: 1 0 auto;
+    padding-bottom: 2rem;
 }
 
 html {
@@ -40,18 +58,6 @@ html {
     html {
         font-size:20px
     }
-}
-
-body {
-    color: var(--text-primary);
-    background-color: var(--bg-primary);
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-    font-family: "Libre Baskerville", serif;
-}
-
-.content {
-    margin-bottom: 4rem
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -556,13 +562,18 @@ a.sidebar-nav-item-toc {
 }
 
 .footer {
+    width: 100%;
     text-align: center;
     padding: 0.8rem 0;
     background-color: var(--bg-primary);
     color: var(--text-secondary);
     font-size: 0.85rem;
     border-top: 1px solid var(--border-color);
-    margin-top: 2rem;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
 }
 
 .footer .container {
@@ -648,6 +659,8 @@ a.sidebar-nav-item-toc {
     font-size: 14px;
     z-index: 1000;
     background-color: var(--bg-secondary);
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
 }
 
 #toc h4 {
@@ -706,11 +719,8 @@ a.sidebar-nav-item-toc {
 @media (max-width: 1200px) {
     #toc {
         position: static;
-        background: var(--bg-secondary);
-        padding: 15px;
-        border: 1px solid var(--border-color);
-        box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
-        max-width: 800px;
+        max-height: none;
+        overflow-y: visible;
         margin: 20px auto;
         width: calc(100% - 2rem);
     }
@@ -1080,4 +1090,14 @@ body:not(.theme-base-dark) .footer a {
 
 body:not(.theme-base-dark) .footer a:hover {
     color: var(--accent-secondary);
+}
+
+.markdown-content {
+    flex: 1;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    padding-bottom: 2rem;
+    width: 100%;
+    box-sizing: border-box;
 }
