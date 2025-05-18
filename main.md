@@ -1,5 +1,5 @@
 
-Conventions:
+### Conventions:
 
 $\a = \sqhf{\q + i\p}$, $\q = \sqhf{\a + \a^\dagger}$, $\p = \frac{\a - \a^\dagger}{\sqrt{2}i}$, $\hbar = 1$.
 
@@ -29,12 +29,6 @@ e^X Y e^{-X} = Y + [X,Y] + \frac{1}{2!}[X,[X,Y]] + \frac{1}{3!}[X,[X,[X,Y]]] + \
 $$
 
 
-## Beam Splitter
-
-- $BS(\theta, \varphi) = e^{-i\hf{\theta} (e^{i\varphi}\a^\dagger\b+e^{-i\varphi}\a\b^\dagger)}$
-- $BS(\theta, \varphi)^\dagger \a BS(\theta, \varphi) = \cos\hf{\theta} \a - i \sin\hf{\theta} e^{i\varphi} \b$
-- $BS(\theta, \varphi)^\dagger \b BS(\theta, \varphi) = \cos\hf{\theta} \b - i \sin\hf{\theta} e^{-i\varphi} \a$
-- $BS(\theta, \varphi) \keta{\alpha} \keta{\beta} = \keta{\alpha\cos\hf{\theta} + i\beta\sin\hf{\theta} e^{i\varphi}} \keta{\beta\cos\hf{\theta} + i\alpha\sin\hf{\theta} e^{-i\varphi}}$
 
 
 ## Commutators
@@ -52,15 +46,6 @@ $$
 
 
 
-## Displacement Operator
-
-- $\D{\alpha} = e^{\alpha \a^\dagger - \alpha^* \a} = e^{i\sqtw(\q\Im\alpha - \p\Re\alpha)}$
-- When $p_0,q_0\in\mathbb{R}$, $\D{q_0} = e^{-i\sqtw q_0\p}$, $\D{i p_0} = e^{i\sqtw p_0 \q}$
-- $\D{\alpha}^\dagger \a \D{\alpha} = \a + \alpha$
-- $\D{\alpha} \D{\beta} = e^{i(\Re\beta\Im\alpha-\Re\alpha\Im\beta)} \D{\alpha + \beta} = e^{2i(\Re\beta\Im\alpha-\Re\alpha\Im\beta)} \D{\beta} \D{\alpha}$
-- $\D{\alpha}: \psi(x) \mapsto \psi(x - \sqtw\Re\alpha) e^{ix\sqtw\Im\alpha-i\Re\alpha\Im\alpha}$
-- $e^{i\kappa\q} e^{i\lambda\p} = e^{-i\kappa\lambda/2} e^{i(\kappa\q + \lambda\p)} = e^{-i\kappa\lambda} e^{i\lambda\p} e^{i\kappa\q}$
-
 
 ## Fock State
 
@@ -68,7 +53,9 @@ $$
 - Wigner function: $W_n(q,p) = \frac{(-1)^n}{\pi} e^{-(q^2+p^2)} L_n(2(q^2 + p^2))$, where $L_n(x)$ is the Laguerre polynomial
 - Husimi Q function: $Q_n(\alpha) = \frac{1}{\pi} e^{-\abs{\alpha}^2} \frac{\abs{\alpha}^{2n}}{n!}$
 
-## Gaussian State
+## Gaussian QI
+
+### Gaussian States
 - Moments: $\mu_k = \ev{\r_k}$, $\sigma_{jk} = \hf{1}\ev{\set{\r_j, \r_k}} - \mu_j \mu_k$, where $\r = (q_1,\cdots,q_n,p_1,\ldots,p_n)^T$.
     - $\bm{\sigma} + \hf{i}\bm{\Omega} \ge \bm{0}$, where $\bm{\Omega}$ is the symplectic form.
     - Wigner function: $W(q,p) = \frac{1}{(2\pi)^n \sqrt{\det{\bm{\Omega}}}} e^{-\frac{1}{2}(\bm{r} - \bm{\mu})^T \bm{\sigma}^{-1} (\bm{r} - \bm{\mu})}$.
@@ -85,36 +72,13 @@ $$
     - Heterodyne:
     - Any Gaussian:
 
-## Integrals
-- Gaussian ($a>0;b,c\in\mathbb{R}$):
-    - $\int_{-\infty}^\infty e^{-a x^2 + bx + c} \dd x = \sqrt{\frac{\pi}{a}} e^{\frac{b^2}{4a} + c}$.
-
-## Other Gaussian Operators
-- Sheering:
-- Two-mode sum:
-- Two-mode squeezing:
-
-## Phase Space
-
-- Inverse map: $f(q,p) = 2\int_{-\infty}^\infty \bra{q+y}\Phi[f]\ket{q-y} e^{-2ipy} d y$
-- Moyal product: $f \star g = f e^{\frac{i}{2}(\overleftarrow{\partial}_q \overrightarrow{\partial}_p - \overleftarrow{\partial}_p \overrightarrow{\partial}_q)} g$
+### Gaussian Integrals
+- Gaussian:
+    - $\int_{-\infty}^\infty e^{-a x^2 + bx + c} \dd x = \sqrt{\frac{\pi}{a}} e^{\frac{b^2}{4a} + c}$, when $a>0;b,c\in\R$.
+    - $\int_{-\infty}^\infty \frac{x^{2m}}{\sqrt{2\pi}\sigma} e^{-\frac{x^2}{2\sigma^2}} \dd x = 2^m \sigma^{2m} \frac{\Gamma\pp{m+\hf{1}}}{\sqrt{\pi}}$, when $m\in\mathbb{Z}^+$.
 
 
-## Rotation Operator
-
-- $\R{\theta} = e^{-i\theta\n}$
-- $\R{\theta} \keta{\alpha} = \keta{e^{-i\theta}\alpha}$
-- $\R{\theta}^\dagger \a \R{\theta} = e^{-i\theta}\a$
-- $\R{\theta}^\dagger \q \R{\theta} = \cos\theta \q + \sin\theta \p$
-- $\R{\theta}^\dagger \p \R{\theta} = \cos\theta \p - \sin\theta \q$
-
-
-## Quantum Signal Processing
-
-- Jacobi-Anger expansion: $e^{-itx} = J_0(t) + 2\sum_{k=1}^\infty (-i)^k J_k(t) T_k(x)$, where $J_k(t)$ is the Bessel function of the first kind and $T_k(x)$ is the Chebyshev polynomial of the first kind
-
-
-## Squeezing Operator
+### Squeezing Operator
 
 - $\S{\xi} = e^{\frac{1}{2}(\xi^* \a^2 - \xi \a^{\dagger 2})}$
 - Let $\xi = re^{i2\theta}$
@@ -129,3 +93,59 @@ $$
     - $\S{a}^\dagger \p \S{a} = e^{a}\p$
     - $\S{a}: \psi(x) \mapsto e^{a/2} \psi(e^{a}x)$
     - $\S{a} \D{b} = \D{e^{-a}b} \S{a}$
+
+### Displacement Operator
+
+- $\D{\alpha} = e^{\alpha \a^\dagger - \alpha^* \a} = e^{i\sqtw(\q\Im\alpha - \p\Re\alpha)}$
+- When $p_0,q_0\in\mathbb{R}$, $\D{q_0} = e^{-i\sqtw q_0\p}$, $\D{i p_0} = e^{i\sqtw p_0 \q}$
+- $\D{\alpha}^\dagger \a \D{\alpha} = \a + \alpha$
+- $\D{\alpha} \D{\beta} = e^{i(\Re\beta\Im\alpha-\Re\alpha\Im\beta)} \D{\alpha + \beta} = e^{2i(\Re\beta\Im\alpha-\Re\alpha\Im\beta)} \D{\beta} \D{\alpha}$
+- $\D{\alpha}: \psi(x) \mapsto \psi(x - \sqtw\Re\alpha) e^{ix\sqtw\Im\alpha-i\Re\alpha\Im\alpha}$
+- $e^{i\kappa\q} e^{i\lambda\p} = e^{-i\kappa\lambda/2} e^{i(\kappa\q + \lambda\p)} = e^{-i\kappa\lambda} e^{i\lambda\p} e^{i\kappa\q}$
+
+### Rotation Operator
+
+- $\RR{\theta} = e^{-i\theta\n}$
+- $\RR{\theta} \keta{\alpha} = \keta{e^{-i\theta}\alpha}$
+- $\RR{\theta}^\dagger \a \RR{\theta} = e^{-i\theta}\a$
+- $\RR{\theta}^\dagger \q \RR{\theta} = \cos\theta \q + \sin\theta \p$
+- $\RR{\theta}^\dagger \p \RR{\theta} = \cos\theta \p - \sin\theta \q$
+
+### Beam Splitter
+
+- $BS(\theta, \varphi) = e^{-i\hf{\theta} (e^{i\varphi}\a^\dagger\b+e^{-i\varphi}\a\b^\dagger)}$
+- $BS(\theta, \varphi)^\dagger \a BS(\theta, \varphi) = \cos\hf{\theta} \a - i \sin\hf{\theta} e^{i\varphi} \b$
+- $BS(\theta, \varphi)^\dagger \b BS(\theta, \varphi) = \cos\hf{\theta} \b - i \sin\hf{\theta} e^{-i\varphi} \a$
+- $BS(\theta, \varphi) \keta{\alpha} \keta{\beta} = \keta{\alpha\cos\hf{\theta} + i\beta\sin\hf{\theta} e^{i\varphi}} \keta{\beta\cos\hf{\theta} + i\alpha\sin\hf{\theta} e^{-i\varphi}}$
+
+### Other Gaussian Operators
+- Sheering:
+    - $e^{i\frac{\mu}{2}\q^2}$: $\q \mapsto \q$, $\p \mapsto \p - \mu\q$
+    - $e^{i\frac{\mu}{2}\p^2}$: $\q \mapsto \q + \mu\p$, $\p \mapsto \p$
+- Two-mode sum:
+    - $e^{i\mu\q_1\q_2}$: $\q_1 \mapsto \q_1$, $\p_1 \mapsto \p_1 - \mu\q_2$, $\q_2 \mapsto \q_2$, $\p_2 \mapsto \p_2 - \mu\q_1$
+    - $e^{i\mu\p_1\p_2}$: $\q_1 \mapsto \q_1 + \mu\p_2$, $\p_1 \mapsto \p_1$, $\q_2 \mapsto \q_2 + \mu\p_1$, $\p_2 \mapsto \p_2$
+    - $e^{i\mu\q_1\p_2}$: $\q_1 \mapsto \q_1$, $\p_1 \mapsto \p_1 - \mu\p_2$, $\q_2 \mapsto \q_2 + \mu\q_1$, $\p_2 \mapsto \p_2$
+- Two-mode squeezing:
+    - $e^{\kappa(\a^\dag\b^\dag - \a\b)}$: $\a \mapsto \cosh\kappa \a - \sinh\kappa \b^\dag$
+
+
+
+
+
+## Phase Space
+
+- Inverse map: $f(q,p) = 2\int_{-\infty}^\infty \bra{q+y}\Phi[f]\ket{q-y} e^{-2ipy} d y$
+- Moyal product: $f \star g = f e^{\frac{i}{2}(\overleftarrow{\partial}_q \overrightarrow{\partial}_p - \overleftarrow{\partial}_p \overrightarrow{\partial}_q)} g$
+
+
+
+
+
+
+
+
+## QSP
+
+- Jacobi-Anger expansion: $e^{-itx} = J_0(t) + 2\sum_{k=1}^\infty (-i)^k J_k(t) T_k(x)$, where $J_k(t)$ is the Bessel function of the first kind and $T_k(x)$ is the Chebyshev polynomial of the first kind
+

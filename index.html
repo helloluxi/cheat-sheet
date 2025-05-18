@@ -20,7 +20,7 @@
             "\\q": "\\hat{q}",
             "\\p": "\\hat{p}",
             "\\D": "\\mathcal{D}\\left( #1 \\right)",
-            "\\R": "\\mathcal{R}\\left( #1 \\right)",
+            "\\RR": "\\mathcal{R}\\left( #1 \\right)",
             "\\S": "\\mathcal{S}\\left( #1 \\right)",
             "\\ketq": "\\ket{#1}_{q}",
             "\\ketp": "\\ket{#1}_{p}",
@@ -42,6 +42,10 @@
             "\\set": "\\left\\{ #1 \\right\\}",
             "\\pp": "\\left( #1 \\right)",
             "\\bb": "\\left[ #1 \\right]",
+            "\\R": "\\mathbb{R}",
+            "\\C": "\\mathbb{C}",
+            "\\Z": "\\mathbb{Z}",
+            "\\N": "\\mathbb{N}",
         };
     
         var delimiters = [
@@ -93,7 +97,17 @@
             <p class="masthead-subtitle">Everything here is the fundamental law of physics. Any violation is just reality failing to keep up.</p>
         </div>
     </div>
-    <div id="toc"></div>
+    <div id="toc">
+        <div class="toc-header">
+            <div class="toc-title">Table of Contents</div>
+            <button id="theme-toggle-btn" title="Toggle theme">
+                <span class="theme-icon">🌙</span>
+            </button>
+        </div>
+        <ul>
+            <!-- TOC items will be populated here -->
+        </ul>
+    </div>
     <div id="content" class="markdown-content"></div>
     <footer class="footer">
         <div class="container">
@@ -107,22 +121,87 @@
                 document.getElementById('content').innerHTML = marked.parse(markdown);
                 renderMathInElement(document.body, { delimiters: delimiters, macros: macros });
                 
-                const headings = document.querySelectorAll('h2');
+                const headings = document.querySelectorAll('h2, h3');
                 if (headings.length > 0) {
                     const toc = document.getElementById('toc');
-                    toc.innerHTML = '<h4>Table of Contents</h4><ul>';
-                    headings.forEach((heading, index) => {
-                        const id = `heading-${index}`;
+                    const tocList = toc.querySelector('ul');
+                    tocList.innerHTML = ''; // Clear existing content
+                    let currentH2 = null;
+                    let currentUl = null;
+                    
+                    // Process headings in reverse to properly wrap content
+                    for (let i = headings.length - 1; i >= 0; i--) {
+                        const heading = headings[i];
+                        const id = `heading-${i}`;
                         heading.id = id;
-                        toc.innerHTML += `<li><a href="#${id}">${heading.textContent}</a></li>`;
-                    });
-                    toc.innerHTML += '</ul>';
+                        
+                        if (heading.tagName === 'H2') {
+                            currentH2 = heading;
+                            // Wrap all content until next h2 in a div
+                            let nextElement = heading.nextElementSibling;
+                            const wrapper = document.createElement('div');
+                            while (nextElement && nextElement.tagName !== 'H2') {
+                                const temp = nextElement.nextElementSibling;
+                                wrapper.appendChild(nextElement);
+                                nextElement = temp;
+                            }
+                            heading.parentNode.insertBefore(wrapper, heading.nextSibling);
+                            
+                            // Add click handler for expandable functionality
+                            heading.addEventListener('click', function() {
+                                this.classList.toggle('expanded');
+                                const content = this.nextElementSibling;
+                                if (this.classList.contains('expanded')) {
+                                    content.style.maxHeight = content.scrollHeight + 'px';
+                                } else {
+                                    content.style.maxHeight = '0';
+                                }
+                            });
+                            
+                            tocList.innerHTML += `<li><a href="#${id}">${heading.textContent}</a></li>`;
+                            currentUl = null;
+                        } else if (heading.tagName === 'H3' && currentH2) {
+                            if (!currentUl) {
+                                const lastLi = tocList.querySelector('li:last-child');
+                                lastLi.innerHTML += '<ul class="h3-list"></ul>';
+                                currentUl = lastLi.querySelector('ul');
+                            }
+                            currentUl.innerHTML += `<li><a href="#${id}">${heading.textContent}</a></li>`;
+                        }
+                    }
                 }
             })
             .catch(error => {
                 console.error('Error loading markdown:', error);
                 document.getElementById('content').innerHTML = '<p>Error loading content. Please check if index.md exists.</p>';
             });
+
+        // Theme switching functionality
+        function setTheme(theme) {
+            document.body.className = theme === 'dark' ? 'theme-base-dark' : '';
+            localStorage.setItem('theme', theme);
+            const btn = document.getElementById('theme-toggle-btn');
+            if (btn) {
+                const icon = btn.querySelector('.theme-icon');
+                if (theme === 'dark') {
+                    icon.textContent = '🌙';
+                } else {
+                    icon.textContent = '☀️';
+                }
+            }
+        }
+
+        // Initialize theme
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        setTheme(savedTheme);
+
+        // Theme toggle button click handler
+        document.addEventListener('click', function(e) {
+            if (e.target.closest('#theme-toggle-btn')) {
+                const currentTheme = document.body.classList.contains('theme-base-dark') ? 'dark' : 'light';
+                setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+            }
+        });
     </script>
 </body>
 </html>
